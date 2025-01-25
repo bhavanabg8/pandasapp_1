@@ -10,7 +10,7 @@ from io import BytesIO
 #     "City": ["City1", "City1", "City1", "City1", "City1", "City2", "City2", "City2", "City2", "City2"],
 #     "Sales": [100, 200, 150, 300, 250, 400, 100, 300, 200, 150]
 # })
-data = pd.read_csv("c:/Users/Acer/Documents/Supermart_dataset.csv") 
+data = pd.read_csv("Supermart_dataset.csv") 
 
 # Streamlit app
 st.title("Top 7 Categories by Sales")

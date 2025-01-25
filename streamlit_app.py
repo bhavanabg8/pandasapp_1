@@ -13,7 +13,7 @@ from io import BytesIO
 data = pd.read_csv("c:/Users/Acer/Documents/Supermart_dataset.csv") 
 
 # Streamlit app
-st.title("Top 10 Categories by Sales")
+st.title("Top 7 Categories by Sales")
 
 # Dropdown filter for City
 cities = data['City'].unique()
@@ -27,12 +27,12 @@ if st.button("Generate Plot"):
     grouped_data = filtered_data.groupby('Category')['Sales'].sum().reset_index()
 
     # Sort by Sales in descending order and select top 5
-    top_5 = grouped_data.sort_values(by='Sales', ascending=False).head(10)
+    top_7 = grouped_data.sort_values(by='Sales', ascending=False).head(7)
 
     # Plot the bar chart
     fig, ax = plt.subplots()
-    ax.bar(top_5['Category'], top_5['Sales'], color='skyblue')
-    ax.set_title("Top 10 Categories by Sales")
+    ax.bar(top_7['Category'], top_7['Sales'], color='skyblue')
+    ax.set_title("Top 7 Categories by Sales")
     ax.set_xlabel("Category")
     ax.set_ylabel("Sales")
 
@@ -47,7 +47,7 @@ if st.button("Generate Plot"):
     st.download_button(
         label="Download Plot as PNG",
         data=buf,
-        file_name="top_10_categories_sales.png",
+        file_name="top_7_categories_sales.png",
         mime="image/png"
     )
 # gpu-htga-cbp
